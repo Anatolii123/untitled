@@ -166,6 +166,24 @@
                       }
                   }
               }
+
+              container.onmouseover = container.onmouseout = handler;
+              function handler(event) {
+                  if (event.type == 'mouseover') {
+                      event.target.style.background = 'pink'
+                  }
+              }
+
+              // for (var i = 0; i < tableObj.rows.length; i++) {
+              //     var table = tableObj.rows[i].cells;
+              //     for (var j = 0; j < table.length; j++) {
+              //         if (table[j].event.type == 'mouseover') {
+              //             event.target.style.color = "white"
+              //             table[j].style.color = "white";
+              //         }
+              //     }
+              // }
+
           }
       }
   </script>
