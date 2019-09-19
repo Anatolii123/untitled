@@ -130,7 +130,7 @@
     tableObj.style.width = '40%';
     var tableHTML = '<tr><th> </th><th id="2">1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>';
     for (var i = 1; i < 10; i++){
-        tableHTML += '<tr><th>' + i + '</th><td>' + i*1 + '</td><td>' + i*2 + '</td><td>' + i*3 + '</td><td>' + i*4 + '</td><td>' + i*5 + '</td>' +
+        tableHTML += '<tr><th>' + i + '</th><td id = "asd">' + i + '</td><td>' + i*2 + '</td><td>' + i*3 + '</td><td>' + i*4 + '</td><td>' + i*5 + '</td>' +
             '<td>' + i*6 + '</td><td>' + i*7 + '</td><td>' + i*8 + '</td><td>' + i*9 + '</td></tr>';
     }
     tableObj.innerHTML = tableHTML;
@@ -146,7 +146,12 @@
               document.body.className = "Change";
               tableObj.caption.style.color = "white";
               tableObj.style.borderColor = "rgb(51,54,57)";
-
+              for (var i = 0; i < tableObj.rows.length; i++) {
+                  var table = tableObj.rows[i].cells;
+                  for (var j = 0; j < table.length; j++) {
+                      table[j].style.borderColor = "rgb(51,54,57)";
+                  }
+              }
           } else {
               document.body.className = "Unchange";
               tableObj.caption.style.color = "black";
