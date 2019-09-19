@@ -150,6 +150,7 @@
                   var table = tableObj.rows[i].cells;
                   for (var j = 0; j < table.length; j++) {
                       table[j].style.borderColor = "rgb(51,54,57)";
+                      table[j].style.color = "white";
                   }
               }
           } else {
@@ -160,6 +161,9 @@
                   var table = tableObj.rows[i].cells;
                   for (var j = 0; j < table.length; j++) {
                       table[j].style.borderColor = "white";
+                      if (i > 0 && j >0) {
+                          table[j].style.color = "black";
+                      }
                   }
               }
           }
