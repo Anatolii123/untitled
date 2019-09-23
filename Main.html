@@ -132,10 +132,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
-<input type="range" id="r1" min="1" max="16" step="1">
+<input type="range" id="r1" min="2" max="16" step="1">
 <script language="JavaScript" >
-    var rng=document.getElementById('r1');
-    var n = rng.value;
+    var rng = document.getElementById('r1');
+    let n = rng.value;
     var tableObj = document.createElement('table');
     tableObj.style.width = '40%';
     var mainrow = '<tr><th> </th>';
@@ -158,6 +158,7 @@
     } else {
         var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ичной системы счисления</b>";
     }
+
     document.body.appendChild(tableObj);
 </script>
 <div class="center">
