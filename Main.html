@@ -133,7 +133,7 @@
 </head>
 <body>
 <script language="JavaScript" >
-    var n = 8;
+    var n = 15;
     var tableObj = document.createElement('table');
     tableObj.style.width = '40%';
     var mainrow = '<tr><th> </th>';
@@ -151,7 +151,11 @@
         tableHTML += row;
     }
     tableObj.innerHTML = tableHTML;
-    var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ричной системы счисления</b>";
+    if (n != 2 && n != 3 && n != 10) {
+        var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ричной системы счисления</b>";
+    } else {
+        var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ичной системы счисления</b>";
+    }
     document.body.appendChild(tableObj);
 </script>
 <div class="center">
