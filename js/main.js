@@ -5,12 +5,12 @@ function fun() {
   n = rng.value;
   var mainrow = '<tr><th> </th>';
   for (var i = 1; i < n; i++) {
-    mainrow += '<th>' + i + '</th>';
+    mainrow += '<th>' + i.toString(n) + '</th>';
   }
   mainrow += '</tr>';
   var tableHTML = mainrow;
   for (var i = 1; i < n; i++){
-    row = '<tr><th>' + i + '</th>';
+    row = '<tr><th>' + i.toString(n) + '</th>';
     for (var j = 1; j < n; j++) {
       row += '<td>' + (i*j).toString(n) + '</td>';
     }
@@ -22,6 +22,16 @@ function fun() {
     var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ричной системы счисления</b>";
   } else {
     var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ичной системы счисления</b>";
+  }
+  if (document.body.className == "Change"){
+    tableObj.caption.style.color = "white";
+    for (var i = 0; i < tableObj.rows.length; i++) {
+      var table = tableObj.rows[i].cells;
+      for (var j = 0; j < table.length; j++) {
+        table[j].classList.add("Change");
+        table[j].classList.remove("Unchange");
+      }
+    }
   }
   document.body.appendChild(tableObj);
 }
