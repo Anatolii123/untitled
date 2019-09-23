@@ -125,8 +125,9 @@
     }
     .center {
       position: absolute;
-      top: calc(50% - 450px);
-      left: calc(50% - -800px);
+      /*450, 800*/
+      top: calc(50% - 200px);
+      left: calc(50% - -200px);
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -212,12 +213,6 @@
               }
           }
       }
-      var btn = document.createElement (('v' == '\v') ? '<input name="myName">' : 'input'); btn.name = 'myName';
-      btn.type = 'button'; // или 'submit', или 'reset';
-      btn.id = 'myUniqueID';
-      btn.value = 'Нажать'; // или 'Отправить', или 'Очистить'...
-      btn.style.cssText = 'color: red; margin-top: 100px; ...';
-
   </script>
 </div>
 </body>
