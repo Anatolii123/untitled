@@ -1,11 +1,10 @@
 var rng = document.getElementById('r1');
 var tableObj = document.createElement('table');
-tableObj.style.width = '50%';
-tableObj.style.height = '50%';
 tableObj.style.top = '10%';
-tableObj.style.left = '22%';
+tableObj.style.left = '35%';
 function fun() {
   n = rng.value;
+  tableObj.style.left = -(n).toString()+43+"%";
   var mainrow = '<tr><th> </th>';
   for (var i = 0; i < n; i++) {
     mainrow += '<th>' + i.toString(n) + '</th>';
@@ -38,8 +37,7 @@ function fun() {
   }
   document.body.appendChild(tableObj);
 }
-fun();
-//document.ready()
+fun(10);
 cbx.onclick = function() {
   if(document.body.className != "Change") {
     document.body.classList.add("Change");
