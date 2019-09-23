@@ -133,12 +133,16 @@
 </head>
 <body>
 <script language="JavaScript" >
+    let arr = new Array(11);
     var tableObj = document.createElement('table');
     tableObj.style.width = '40%';
     var tableHTML = '<tr><th> </th><th id="2">1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>';
     for (var i = 1; i < 10; i++){
-        tableHTML += '<tr><th>' + i + '</th><td id = "asd">' + i + '</td><td>' + i*2 + '</td><td>' + i*3 + '</td><td>' + i*4 + '</td><td>' + i*5 + '</td>' +
+        arr[1] = i;
+        for (var i = 1; i < 10; i++)
+        stru = '<tr><th>' + i + '</th><td>' + i + '</td><td>' + i*2 + '</td><td>' + i*3 + '</td><td>' + i*4 + '</td><td>' + i*5 + '</td>' +
             '<td>' + i*6 + '</td><td>' + i*7 + '</td><td>' + i*8 + '</td><td>' + i*9 + '</td></tr>';
+        tableHTML += stru;
     }
     tableObj.innerHTML = tableHTML;
     var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения</b>";
@@ -149,19 +153,25 @@
   <label for="cbx" class="toggle"><span></span></label>
   <script>
       cbx.onclick = function() {
-
           if(document.body.className != "Change") {
-              document.body.className = "Change";
+              document.body.classList.add("Change");
+              document.body.classList.remove("Unchange");
               tableObj.caption.style.color = "white";
               tableObj.style.borderColor = "rgb(51,54,57)";
               for (var i = 0; i < tableObj.rows.length; i++) {
                   var table = tableObj.rows[i].cells;
                   for (var j = 0; j < table.length; j++) {
-                      table[j].className = "Change";
+                      table[j].classList.add("Change");
+                      table[j].classList.remove("Unchange");
+                      table[j].onmouseleave = function() {
+                          this.classList.add("Change");
+                          this.classList.remove("Unchange");
+                      }
                   }
               }
           } else {
-              document.body.className = "Unchange";
+              document.body.classList.add("Unchange");
+              document.body.classList.remove("Change");
               tableObj.caption.style.color = "black";
               tableObj.style.borderColor = "white";
               for (var i = 0; i < tableObj.rows.length; i++) {
@@ -169,18 +179,27 @@
                   for (var j = 0; j < table.length; j++) {
                       table[j].style.borderColor = "white";
                       if (i > 0 && j >0) {
-                          table[j].className = "Unchange";
+                          table[j].classList.add("Unchange");
+                          table[j].classList.remove("Change");
                           table[j].onmouseenter = function() {
-                              this.className = "Change";
+                              this.classList.add("Change");
+                              this.classList.remove("Unchange");
                           }
                           table[j].onmouseleave = function() {
-                              this.className = "Unchange";
+                              this.classList.add("Unchange");
+                              this.classList.remove("Change");
                           }
                       }
                   }
               }
           }
       }
+      var btn = document.createElement (('v' == '\v') ? '<input name="myName">' : 'input'); btn.name = 'myName';
+      btn.type = 'button'; // или 'submit', или 'reset';
+      btn.id = 'myUniqueID';
+      btn.value = 'Нажать'; // или 'Отправить', или 'Очистить'...
+      btn.style.cssText = 'color: red; margin-top: 100px; ...';
+
   </script>
 </div>
 </body>
