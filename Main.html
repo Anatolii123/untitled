@@ -21,7 +21,7 @@
       left: calc(50% - 375px);
     }
     caption {
-      font-size: 300%;
+      font-size: 250%;
       font-family: Verdana, Arial, Helvetica, sans-serif;
       text-align: center
     }
@@ -133,19 +133,25 @@
 </head>
 <body>
 <script language="JavaScript" >
+    var n = 8;
     var tableObj = document.createElement('table');
     tableObj.style.width = '40%';
-    var tableHTML = '<tr><th> </th><th id="2">1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>';
-    for (var i = 1; i < 10; i++){
-        row = '<tr><th>' + i + '</th>'
-        for (var j = 1; j < 10; j++) {
-            row += '<td>' + i*j + '</td>';
+    var mainrow = '<tr><th> </th>';
+    for (var i = 1; i < n; i++) {
+        mainrow += '<th>' + i + '</th>';
+    }
+    mainrow += '</tr>';
+    var tableHTML = mainrow;
+    for (var i = 1; i < n; i++){
+        row = '<tr><th>' + i + '</th>';
+        for (var j = 1; j < n; j++) {
+            row += '<td>' + (i*j).toString(n) + '</td>';
         }
         row += '</tr>';
         tableHTML += row;
     }
     tableObj.innerHTML = tableHTML;
-    var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения</b>";
+    var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ричной системы счисления</b>";
     document.body.appendChild(tableObj);
 </script>
 <div class="center">
