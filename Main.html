@@ -62,7 +62,6 @@
     td.Unchange{
       color: black;
     }
-
     .toggle {
       position: relative;
       display: block;
@@ -162,7 +161,7 @@
                   }
               }
           } else {
-              document.body.classList.add("Unchange");
+              document.body.className = "Unchange";
               tableObj.caption.style.color = "black";
               tableObj.style.borderColor = "white";
               for (var i = 0; i < tableObj.rows.length; i++) {
@@ -171,27 +170,15 @@
                       table[j].style.borderColor = "white";
                       if (i > 0 && j >0) {
                           table[j].className = "Unchange";
+                          table[j].onmouseenter = function() {
+                              this.className = "Change";
+                          }
+                          table[j].onmouseleave = function() {
+                              this.className = "Unchange";
+                          }
                       }
                   }
               }
-
-              // container.onmouseover = container.onmouseout = handler;
-              // function handler(event) {
-              //     if (event.type == 'mouseover') {
-              //         event.target.style.background = 'pink'
-              //     }
-              // }
-              //
-              // // for (var i = 0; i < tableObj.rows.length; i++) {
-              //     var table = tableObj.rows[i].cells;
-              //     for (var j = 0; j < table.length; j++) {
-              //         if (table[j].event.type == 'mouseover') {
-              //             event.target.style.color = "white"
-              //             table[j].style.color = "white";
-              //         }
-              //     }
-              // }
-
           }
       }
   </script>
