@@ -133,6 +133,7 @@
 </head>
 <body>
 <input type="range" id="r1" min="2" max="16" step="1" oninput="fun()">
+<!--todo вынести скрипты в отдельный js-файл/файлы-->
 <script language="JavaScript" >
     var rng = document.getElementById('r1');
     var tableObj = document.createElement('table');
@@ -161,6 +162,8 @@
         }
         document.body.appendChild(tableObj);
     }
+    fun();
+    //document.ready()
 
 </script>
 <div class="center">
