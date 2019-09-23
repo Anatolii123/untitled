@@ -133,16 +133,16 @@
 </head>
 <body>
 <script language="JavaScript" >
-    let arr = new Array(11);
     var tableObj = document.createElement('table');
     tableObj.style.width = '40%';
     var tableHTML = '<tr><th> </th><th id="2">1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>';
     for (var i = 1; i < 10; i++){
-        arr[1] = i;
-        for (var i = 1; i < 10; i++)
-        stru = '<tr><th>' + i + '</th><td>' + i + '</td><td>' + i*2 + '</td><td>' + i*3 + '</td><td>' + i*4 + '</td><td>' + i*5 + '</td>' +
-            '<td>' + i*6 + '</td><td>' + i*7 + '</td><td>' + i*8 + '</td><td>' + i*9 + '</td></tr>';
-        tableHTML += stru;
+        row = '<tr><th>' + i + '</th>'
+        for (var j = 1; j < 10; j++) {
+            row += '<td>' + i*j + '</td>';
+        }
+        row += '</tr>';
+        tableHTML += row;
     }
     tableObj.innerHTML = tableHTML;
     var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения</b>";
