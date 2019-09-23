@@ -132,34 +132,37 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
-<input type="range" id="r1" min="2" max="16" step="1">
+<input type="range" id="r1" min="2" max="16" step="1" oninput="fun()">
 <script language="JavaScript" >
     var rng = document.getElementById('r1');
-    let n = rng.value;
     var tableObj = document.createElement('table');
     tableObj.style.width = '40%';
-    var mainrow = '<tr><th> </th>';
-    for (var i = 1; i < n; i++) {
-        mainrow += '<th>' + i + '</th>';
-    }
-    mainrow += '</tr>';
-    var tableHTML = mainrow;
-    for (var i = 1; i < n; i++){
-        row = '<tr><th>' + i + '</th>';
-        for (var j = 1; j < n; j++) {
-            row += '<td>' + (i*j).toString(n) + '</td>';
+    let n = 10;
+    function fun() {
+        n = rng.value;
+        var mainrow = '<tr><th> </th>';
+        for (var i = 1; i < n; i++) {
+            mainrow += '<th>' + i + '</th>';
         }
-        row += '</tr>';
-        tableHTML += row;
-    }
-    tableObj.innerHTML = tableHTML;
-    if (n != 2 && n != 3 && n != 10) {
-        var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ричной системы счисления</b>";
-    } else {
-        var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ичной системы счисления</b>";
+        mainrow += '</tr>';
+        var tableHTML = mainrow;
+        for (var i = 1; i < n; i++){
+            row = '<tr><th>' + i + '</th>';
+            for (var j = 1; j < n; j++) {
+                row += '<td>' + (i*j).toString(n) + '</td>';
+            }
+            row += '</tr>';
+            tableHTML += row;
+        }
+        tableObj.innerHTML = tableHTML;
+        if (n != 2 && n != 3 && n != 10) {
+            var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ричной системы счисления</b>";
+        } else {
+            var table = tableObj.createCaption().innerHTML = "<b>Таблица умножения " + n + "-ичной системы счисления</b>";
+        }
+        document.body.appendChild(tableObj);
     }
 
-    document.body.appendChild(tableObj);
 </script>
 <div class="center">
   <input type="checkbox" id="cbx" style="display:none"/>
