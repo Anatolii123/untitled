@@ -132,8 +132,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 <body>
+<input type="range" id="r1" min="1" max="16" step="1">
 <script language="JavaScript" >
-    var n = 15;
+    var rng=document.getElementById('r1');
+    var n = rng.value;
     var tableObj = document.createElement('table');
     tableObj.style.width = '40%';
     var mainrow = '<tr><th> </th>';
