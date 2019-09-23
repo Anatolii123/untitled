@@ -1,17 +1,20 @@
 var rng = document.getElementById('r1');
 var tableObj = document.createElement('table');
-tableObj.style.width = '40%';
+tableObj.style.width = '50%';
+tableObj.style.height = '50%';
+tableObj.style.top = '10%';
+tableObj.style.left = '22%';
 function fun() {
   n = rng.value;
   var mainrow = '<tr><th> </th>';
-  for (var i = 1; i < n; i++) {
+  for (var i = 0; i < n; i++) {
     mainrow += '<th>' + i.toString(n) + '</th>';
   }
   mainrow += '</tr>';
   var tableHTML = mainrow;
-  for (var i = 1; i < n; i++){
+  for (var i = 0; i < n; i++){
     row = '<tr><th>' + i.toString(n) + '</th>';
-    for (var j = 1; j < n; j++) {
+    for (var j = 0; j < n; j++) {
       row += '<td>' + (i*j).toString(n) + '</td>';
     }
     row += '</tr>';
@@ -54,26 +57,26 @@ cbx.onclick = function() {
         }
       }
     }
-  } else {
-    document.body.classList.add("Unchange");
-    document.body.classList.remove("Change");
-    tableObj.caption.style.color = "black";
-    tableObj.style.borderColor = "white";
-    for (var i = 0; i < tableObj.rows.length; i++) {
-      var table = tableObj.rows[i].cells;
-      for (var j = 0; j < table.length; j++) {
-        table[j].style.borderColor = "white";
-        if (i > 0 && j >0) {
-          table[j].classList.add("Unchange");
-          table[j].classList.remove("Change");
-          table[j].onmouseenter = function() {
-            this.classList.add("Change");
-            this.classList.remove("Unchange");
-          }
-          table[j].onmouseleave = function() {
-            this.classList.add("Unchange");
-            this.classList.remove("Change");
-          }
+    return;
+  }
+  document.body.classList.add("Unchange");
+  document.body.classList.remove("Change");
+  tableObj.caption.style.color = "black";
+  tableObj.style.borderColor = "white";
+  for (var i = 0; i < tableObj.rows.length; i++) {
+    var table = tableObj.rows[i].cells;
+    for (var j = 0; j < table.length; j++) {
+      table[j].style.borderColor = "white";
+      if (i > 0 && j >0) {
+        table[j].classList.add("Unchange");
+        table[j].classList.remove("Change");
+        table[j].onmouseenter = function() {
+          this.classList.add("Change");
+          this.classList.remove("Unchange");
+        }
+        table[j].onmouseleave = function() {
+          this.classList.add("Unchange");
+          this.classList.remove("Change");
         }
       }
     }
