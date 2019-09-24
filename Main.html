@@ -14,6 +14,9 @@
     body.Unchange{
       background: white;
     }
+    form {
+      font-size: 30px;
+    }
     table {
       border: white;
       position: absolute;
@@ -134,9 +137,9 @@
   <script async src="js/main.js"></script>
 </head>
 <body>
-<form name="myform" oninput="range1value.value = range1.valueAsNumber">
+<form name="myform" id="form" oninput="range1value.value = range1.valueAsNumber">
   <input name="range1" type="range" id="r1" step="1" min="2" oninput="fun()" max="16" list="tickmarks" value="10">
-  <output name="range1value" for="range1" >1</output>
+  <output name="range1value" for="range1" >10</output>
 </form>
 <datalist id="tickmarks">
   <option value=2 label="2">
