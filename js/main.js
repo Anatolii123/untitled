@@ -45,6 +45,8 @@ cbx.onclick = function() {
     document.body.classList.add("Change");
     document.body.classList.remove("Unchange");
     tableObj.caption.style.color = "white";
+    document.myform.classList.add("Change");
+    document.myform.classList.remove("Unchange");
     tableObj.style.borderColor = "rgb(51,54,57)";
     for (var i = 0; i < tableObj.rows.length; i++) {
       var table = tableObj.rows[i].cells;
@@ -62,6 +64,8 @@ cbx.onclick = function() {
   document.body.classList.add("Unchange");
   document.body.classList.remove("Change");
   tableObj.caption.style.color = "black";
+  document.myform.classList.add("Unchange");
+  document.myform.classList.remove("Change");
   tableObj.style.borderColor = "white";
   for (var i = 0; i < tableObj.rows.length; i++) {
     var table = tableObj.rows[i].cells;
