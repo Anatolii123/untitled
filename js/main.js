@@ -1,4 +1,6 @@
 var rng = document.getElementById('r1');
+rng.style.transform = 'rotate(90deg)';
+rng.style.transformOrigin = '20px 20px';
 var tableObj = document.createElement('table');
 tableObj.style.top = '10%';
 tableObj.style.left = '35%';
@@ -37,7 +39,7 @@ function fun() {
   }
   document.body.appendChild(tableObj);
 }
-fun(10);
+fun();
 cbx.onclick = function() {
   if(document.body.className != "Change") {
     document.body.classList.add("Change");

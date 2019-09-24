@@ -20,30 +20,33 @@
       top: calc(50% - 300px);
       left: calc(50% - 375px);
     }
+    datalist {
+      display: grid;
+    }
     caption {
-      font-size: 180%;
+      font-size: 150%;
       font-family: Verdana, Arial, Helvetica, sans-serif;
       text-align: center
     }
     th {
-      font-size: 140%;
+      font-size: 150%;
       font-family: Verdana, sans-serif;
       text-align: center;
       background-color: #4285F4;
       color: white;
       border: #4285F4;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
     }
     td {
-      font-size: 130%;
+      font-size: 150%;
       font-family: Verdana, Helvetica, sans-serif;
       text-align: center;
       border-collapse: collapse;
       transition: .5s;
       border: white;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
     }
     td:hover {
       font-size: 180%;
@@ -52,8 +55,8 @@
       border: #4285F4;
       background-color: #4285F4;
       transition: .5s;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
     }
     td.Change{
       borderColor: rgb(51,54,57);
@@ -126,15 +129,33 @@
     .center {
       position: absolute;
       /*450, -800*/
-      top: calc(50% - 300px);
-      left: calc(50% - -400px);
+      top: calc(50% - 450px);
+      left: calc(50% - -800px);
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script async src="js/main.js"></script>
 </head>
 <body>
-<input type="range" id="r1" min="2" max="16" step="1" oninput="fun()">
+<input type="range" id="r1" min="2" max="16" step="1" oninput="fun()" list="tickmarks" value="10">
+<datalist id="tickmarks">
+  <option value=2 label="2">
+  <option value="3" label="9">
+  <option value="4" >
+  <option value="5">
+  <option value="6" label="16">
+  <option value="7">
+  <option value="8">
+  <option value="9">
+  <option value="10">
+  <option value="11">
+  <option value="12">
+  <option value="13">
+  <option value="14">
+  <option value="15">
+  <option value="16">
+</datalist>
+
 <div class="center">
   <input type="checkbox" id="cbx" style="display:none"/>
   <label for="cbx" class="toggle"><span></span></label>
